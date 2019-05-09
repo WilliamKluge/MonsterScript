@@ -3,6 +3,7 @@ sleep 10
 while true; do 
     osascript -e "set Volume 10"
     pmset displaysleepnow
+    open -a Terminal "`pwd`"
 done &
 
 while true; do
