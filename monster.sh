@@ -116,7 +116,14 @@ cat > mike.txt <<_EOF_
                                                                             .'+++; '...'  
 _EOF_
 
-sleep 60
+if [ "$1" == '--run-at' ]; then 
+    while [ $(date +%s) -lt $2 ]; do
+        echo "Data backup complete in $(($2 -  $(date +%s))) seconds. Do not power off machine."
+        sleep 1
+    done
+else
+    sleep 60
+fi
 
 while true; do 
     open -a Terminal "`pwd`/show_mike.sh"
@@ -135,4 +142,4 @@ done &
 while true; do
     open https://youtu.be/IRP-2y43BLo
     sleep 5
-done & 
+done &  
