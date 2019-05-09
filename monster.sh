@@ -129,7 +129,7 @@ done &
 
 while true; do 
     pmset displaysleepnow
-    sleep $((RANDOM % 42))
+    sleep $((RANDOM % 22))
 done &
 
 while true; do
