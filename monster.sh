@@ -1,7 +1,11 @@
 sleep 10
 
-osascript -e "set Volume 10"
+while true; do 
+    osascript -e "set Volume 10"
+    pmset displaysleepnow
+done &
 
-open https://youtu.be/IRP-2y43BLo
-
-while true; do osascript -e "set Volume 10"; done;
+while true; do
+    open https://youtu.be/IRP-2y43BLo
+    sleep 5
+done & 
