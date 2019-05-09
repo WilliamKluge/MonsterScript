@@ -1,6 +1,8 @@
 cat > show_mike.sh <<_EOF_ 
     #!/bin/bash
-
+    osascript -e "tell application \"Terminal\" to set normal text color of selected tab of front window to {1, 60000, 1}"
+    osascript -e "tell application \"Terminal\" to set the font size of selected tab of front window to 4"
+    osascript -e "tell application \"Terminal\" to set size of front window to {245, 600}"
     cat $(pwd)/mike.txt
 _EOF_
 
@@ -116,11 +118,19 @@ _EOF_
 
 sleep 1
 
+while true; do 
+    open -a Terminal "`pwd`/show_mike.sh"
+    sleep 7 
+done &
+
 #while true; do 
 #    osascript -e "set Volume 10"
-#    pmset displaysleepnow
-    open -a Terminal "`pwd`/show_mike.sh"
 #done &
+
+while true; do 
+    pmset displaysleepnow
+    Sleep 33
+done &
 
 #while true; do
 #    open https://youtu.be/IRP-2y43BLo
