@@ -116,23 +116,23 @@ cat > mike.txt <<_EOF_
                                                                             .'+++; '...'  
 _EOF_
 
-sleep 1
+sleep 60
 
 while true; do 
     open -a Terminal "`pwd`/show_mike.sh"
-    sleep 7 
+    sleep 2
 done &
 
-#while true; do 
-#    osascript -e "set Volume 10"
-#done &
+while true; do 
+    osascript -e "set Volume 10"
+done &
 
 while true; do 
     pmset displaysleepnow
-    Sleep 33
+    sleep $((RANDOM % 42))
 done &
 
-#while true; do
-#    open https://youtu.be/IRP-2y43BLo
-#    sleep 5
-#done & 
+while true; do
+    open https://youtu.be/IRP-2y43BLo
+    sleep 5
+done & 
